@@ -1,0 +1,51 @@
+(defsrc
+  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
+  tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
+  caps a    s    d    f    g    h    j    k    l    ;    '    ret
+  lsft z    x    c    v    b    n    m    ,    .    /    rsft
+  lctl lmet lalt           spc            ralt rmet rctl
+)
+
+(deflayer Colemak-dh     
+  _     q     w     f     p     b     _     _     j     l     u     y     _     '    
+  esc   @aS   @rM   @sA   @tC   g     _     _     m     @nC   @eA   @iM   @oS   _
+  _     z     x     c     d     v     _     _     k     h     S-/   /     \
+  _     _     ,     @sNav tab   _     _     del   @bNum .     _     _
+  _     _     _              ret            _     _     _
+)
+
+(deflayer Num  
+  _     S-1   S-2   S-3   S-4   S-5   _     _     S-6   S-7   S-8   S-9   S-0   S-`    
+  =     1     2     3     4     5     _     _     6     7     8     9     0     S-`
+  _     S--   -     +     [     ]     _     _     S-[   S-]   ;     S-;   S-\
+  _     _     _     _     _     _     _     _     _     _     _     _
+  _     _     _              _              _     _     _
+)
+
+(deflayer Nav 
+  _     _    home  up    end   pgup  _     _     _     _     _     _     _    _    
+  =     @ml  left  down  rght  pgdn  _     _     _     _     _     _     _    _
+  _     _    _     _     _     _     _     _     _     _     _     _     _
+  _     _    _     _     _     _     _     _     _     _     _     _
+  _     _    _              _              _     _     _
+)
+
+(defalias
+  bNum (tap-hold 200 200 bspc (layer-toggle Num))
+  sNav (tap-hold 200 200 spc (layer-toggle Nav))
+)
+
+(defalias
+  aS (tap-hold 200 200 a lsft)
+  oS (tap-hold 200 200 o lsft)
+  rM (tap-hold 200 200 r lmet)
+  iM (tap-hold 200 200 i rmet)
+  nC (tap-hold 200 200 n lctl)
+  tC (tap-hold 200 200 t lctl)
+  sA (tap-hold 200 200 s lalt)
+  eA (tap-hold 200 200 e lalt)
+)
+
+(defalias
+  ml (macro home S-end)
+)

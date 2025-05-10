@@ -170,48 +170,6 @@ clu (macro home S-end C-c up end ret C-v 50 home) ;; copy line up
 cld (macro home S-end C-c right ret C-v 50 home) ;; copy line down
 )
 
-;; chording for ae->æ, ao->å, oe->ø
-(defalias
-  c_dk_a (chord c_dk a)
-  c_dk_e (chord c_dk e)
-  c_dk_o (chord c_dk o)
-)
-(defchords c_dk 20
-  (a    ) @s_a
-  (  e  ) @a_e
-  (    o) @s_o
-  (a e  ) æ
-  (a   o) å 
-  (  e o) ø 
-)
-
-;; chording. may make a vid on this in future. otherwise google "stenography"
-(defzippy
-  monkeytype-codemap/zippy.txt
-  on-first-press-chord-deadline 500
-  idle-reactivate-time          500
-  smart-space-punctuation (? ! . , ; :)
-  output-character-mappings (
-    ;; This should work for US international.
-    ! S-1
-    ? S-/
-    % S-5
-    "(" S-9
-    ")" S-0
-    : S-;
-    < S-,
-    > S-.
-    r#"""# S-'
-    | S-\
-    _ S--
-    ® AG-r
-    ’ (no-erase `)
-    é (single-output ' e)
-  )
-)
-
-
-
 ;; mouse controls
 (defalias
 mwup (mwheel-up 125 120)

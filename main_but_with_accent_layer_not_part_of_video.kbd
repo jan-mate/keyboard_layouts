@@ -1,0 +1,454 @@
+;; note, i use a dk layout, so this script likely wont work for you, sorry.
+
+;; keys for danish layout
+(deflocalkeys-linux
+	+ 	12
+	´ 	13
+	å 	26
+	' 	43
+	æ 	39
+	ø 	40
+	¨ 	27
+	-	  53
+  ½   41
+  <   86
+)
+
+
+(defsrc
+  esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12        
+  ½    1    2    3    4    5    6    7    8    9    0    +    ´    bspc  prtsc home pgup  nlck kp/  kp*  kp-
+  tab  q    w    e    r    t    y    u    i    o    p    å    ¨    '     del   end  pgdn  kp7  kp8  kp9  kp+
+  caps a    s    d    f    g    h    j    k    l    æ    ø    ret                         kp4  kp5  kp6
+  lsft z    x    c    v    b    n    m    ,    .    -    rsft                  up         kp1  kp2  kp3  kprt
+  lctl lmet lalt           spc            ralt  <                     lft   down  rght kp0  kp.
+)
+
+;; default layer. colemak dh
+(deflayer clmk
+  esc  f1      f2      ø     f4    f5   f6   f7   f8    f9   f10    f11  f12        
+  esc  æ       w       f      p     b    6    7    j     l    u      y    rpt-key '  prtsc home pgup nlck kp/  kp*    @qwe 
+  esc  @s_a @m_r    @a_s   @c_t  g    y    u    m     @c_n @a_e   @m_i @s_o å     del   end  pgdn   kp7  kp8    kp9  kp+
+  sldr z       x       c      d     å    h    j    j     h    k      v    q                            ◀◀ ▶⏸   ▶▶
+  lsft z       @,_l  @spc_  @tb_l sldr n    del  @bnum @._l -     rsft                  up           mute voldwn volu @gam
+  lctl lmet    lalt           @m_ret                  @altgr_l  lrld                lft   down  rght   lrld kp.
+)
+
+;; standard qwerty i can toggle to (fx if other ppl wonna use my kb)
+(deflayer qwerty
+  esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12        
+  ½    1    2    3    4    5    6    7    8    9    0    +    ´    bspc  prtsc home pgup  nlck kp/  kp*  @clmk
+  tab  q    w    e    r    t    y    u    i    o    p    å    ¨    '     del   end  pgdn  kp7  kp8  kp9  kp+
+  caps a    s    d    f    g    h    j    k    l    æ    ø    ret                         kp4  kp5  kp6
+  lsft z    x    c    v    b    n    m    ,    .    -    rsft                  up         kp1  kp2  kp3  kprt
+  lctl lmet lalt           spc            ralt  <                     lft   down  rght kp0  kp.
+)
+
+;; navigation + symbols
+(deflayer spclayer
+  _     _     _     _    _    _    _    _    _    _     _   _         
+  grv  @clu   home   home     up    end    pgup    _    j    +    æ      S-2  =  j  S-0  _ _ _ _  _ _ _
+  @cld  @s_ml left   down    rght    pgdn    y    u    m    @c_lp @a_rp @m_dq @s_!    \    _ _ _  _ _ _ _   
+  caps C-z   C-x   C-c   C-v  C-y  h    j    j    /    S-.    '    S-+                            _ _ _  
+  lsft z     x     @spc_ tab  b    n    _     @._l       . /    _                _                  _ _ _ _   
+  _   _    _             _            _    102d                              _ _ _                 _ _   
+)
+
+;; numbers + symbols
+(deflayer nums
+  _    _    _       _       _      _    _    _    _    _    S-6    _   _         
+  grv  <    S-<     S-5     RA-7   RA-0 x    x    _    +    S-'  S-¨  RA-¨ RA-2  _     _    _     _    _    _    _
+  S-0  @s_1 @m_2    @a_3    @c_4   5    x    x    6  @c_7  @a_8  @m_9 @s_0 RA-4  _     _    _     _    _    _    _   
+  caps S-3  RA-<    RA-8    RA-9   RA-´ h    j    S--  -    S-7    ´    S-´                         _    _    _  
+  lsft z    @ctl_,  @spc_ tab  b    n    _      _       @lsft_. /     _                    _          _    _    _    _   
+  _   _   _            _             _    102d                     _     _     _    _     _   
+)
+
+;; music controls
+(deflayer altgrlayer
+  _    _    _       _      _    _    _    _    _    _    _     _   _         
+  grv  q    w       f      p    b    _    _    j    l    u      y    =    _     _     _    _     _    _    _    _
+  \    @a-ac    @m_r    @a_s   @c_t _    y    u    mute    ◀◀  ▶⏸  ▶▶ o    \     _     _    _     _    _    _    _   
+  caps @a-ac    x       c      d    v   h    j    j    voldwn    volu      '    ret                         _    _    _  
+  lsft z    @ctl_,  @spc_  tab  b    n    _    @bnum @lsft_. /    _                    _          _    _    _    _   
+  _   _   _             ret            _    102d                     _     _     _    _     _   
+)
+
+;; mouse controls
+(deflayer dotlayer
+  _    _     _     _     _    _    _    _    _    _      _   _         
+  grv  q  @mwup @mwup @mwup  @mwbup _  _  _   j   mlft  @mup  mrgt  = S-0  _     _    _     _    _    _    _
+  tab  @slw @mwlt  @mwdn @mwrt @mwbdn y    u    @mblt @mlt @mdn @mrt @slw  @slw     _     _    _     _    _    _    _   
+  caps C-z   C-x   @fpd  @fpu  C-y  h    j    j    /    S-.    '    S-+                         _    _    _  
+  lsft z     x     mlft tab  b    n    _      _       . /    _                    _          _    _    _    _   
+  _   _    _             ret            _    102d                     _     _     _    _     _   
+)
+
+;; greek
+(deflayer tablayer
+  _    _    _       _      _    _    _    _    _    _    _     _   _         
+  _    @θ   @ω      @φ     @π   @β   _     _   @κ   @λ   @υ     @ψ   @ζ   '  _     _    _     _        _        _    _ 
+  ´    @s_α @m_ρ    @a_σ   @c_τ @γ   _    _    @μ   @c_ν @a_ε   @m_η @s_ο _     _     _    _     _        _        _    _   
+  '    @ζ   @ξ      @η     @δ   _   _    _    @ι   @χ   @κ     @ν    ret                         ◀◀     ▶⏸     ▶▶
+  lsft z    @ctl_,  @spc_  tab  sldr _    _  @bnum @._l -    _                    _        mute voldwn  volu   _   
+  _   @clmk _           _               @altgr_l  102d                     _     _     _    _     _   
+)
+
+(deflayer gaming
+  esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12        
+  ½    1    2    3    4    5    6    7    8    9    0    +    ´    bspc  prtsc home pgup  nlck kp/  kp*  kp-
+  tab  s    a    w    d    t    y    u    i    o    p    å    ¨    '     del   end  pgdn  kp7  kp8  kp9  kp+
+  caps q    r    e    f    g    h    j    k    l    æ    ø    ret                         kp4  kp5  kp6
+  lsft z    x    spc  v    b    n    m    ,    .    -    rsft                  up         kp1  kp2  kp3  @clmk
+  lctl lmet lalt           c            ralt  <                     lft   down  rght kp0  kp.
+)
+
+
+
+(deflayer ,layer
+  esc  f1      f2      ø     f4    f5   f6   f7   f8    f9   f10    f11  f12        
+  esc  æ       @w-ac   f @p-ac  b 6    7    @j-ac  @l-ac  @u-ac  @y-ac    rpt-key '  prtsc home pgup nlck kp/  kp*    @qwe
+  esc  @s_a-ac @m_r-ac    @a_s-ac   @c_t-ac  @g-ac  @y-ac  @u-ac  @m-ac     @c_n-ac @a_e-ac   @m_i-ac @s_o-ac   å     del   end  pgdn   kp7  kp8    kp9  kp+
+  sldr @z-ac       x       @c-ac      @d-ac     å    @h-ac    @j-ac    @j-ac    @h-ac     @k-ac      v    q                            ◀◀ ▶⏸   ▶▶
+  lsft @z-ac       @ctl_,  @spc_  @tb_l sldr @n-ac    del  @bnum @._l -     rsft                  up           mute voldwn volu @gam
+  lctl lmet    lalt           @m_ret                  @altgr_l  lrld                lft   down  rght   lrld kp.
+)
+
+
+(defalias
+c_s (tap-hold 175 150 s lctl)
+)
+
+;; layer switching
+(defalias
+  qwe (layer-switch qwerty)
+  clmk (layer-switch clmk)
+  gam (layer-switch gaming)
+  grk (layer-switch tablayer)
+
+  spc_ (tap-hold 175 150 spc (layer-toggle spclayer))
+  bnum (tap-hold 175 175 bspc (layer-toggle nums))
+  altgr_l (tap-hold 175 175 o (layer-toggle altgrlayer))
+  ._l (tap-hold 175 175 . (layer-toggle dotlayer))
+  tb_l (tap-hold 175 175 tab (layer-toggle tablayer))
+  b_dl (tap-hold 175 175 bspc (layer-toggle dotlayer))
+  spc_dl (tap-hold 175 175 spc (layer-toggle dotlayer))
+  ,_l (tap-hold 175 175 , (layer-toggle ,layer))
+)
+
+;; homerow mods
+(defalias
+  met_a (tap-hold 175 175 a lmet)
+  ctl_d (tap-hold 175 175 d lctl)
+
+  ctl_k (tap-hold 175 175 k lctl)
+  alt_l (tap-hold 175 175 l ralt)
+  met_; (tap-hold 175 175 ; lmet)
+
+  lsft_. (tap-hold 175 125 . lsft)
+  lsft_= (tap-hold 175 125 S-0 lsft)
+  rsft_h (tap-hold 175 175 h lsft)
+  ralt_u (tap-hold 175 175 u ralt)
+  lalt_b (tap-hold 175 175 b lalt)
+  ctl_z (tap-hold 175 175 z lctl)
+  ctl_, (tap-hold 175 175 , lctl)
+  
+  m_ret (tap-hold 175 175 ret lmet)
+  s_a (tap-hold 175 175 a lsft)
+  s_o (tap-hold 175 175 o lsft)
+  m_r (tap-hold 175 175 r lmet)
+  m_i (tap-hold 175 175 i rmet)
+  c_n (tap-hold 175 150 n lctl)
+  a_s (tap-hold 175 175 s lalt)
+  a_e (tap-hold 300 175 e lalt)
+  c_t (tap-hold 175 150 t lctl)
+)
+
+;; homerow mods for nav layer
+(defalias
+  m_dq (tap-hold 175 175 S-2 rmet)
+  c_lp (tap-hold 175 150 S-8 lctl)
+  a_rp (tap-hold 175 150 S-9 lalt)
+  s_! (tap-hold 175 150 S-1 lsft)
+)
+
+;; homerow mods for number layer
+(defalias
+  s_1 (tap-hold 175 175 1 lsft)
+  s_0 (tap-hold 175 175 0 lsft)
+  m_2 (tap-hold 175 175 2 lmet)
+  m_9 (tap-hold 175 175 9 rmet)
+  a_3 (tap-hold 175 175 3 lalt)
+  a_8 (tap-hold 175 175 8 lalt)
+  c_4 (tap-hold 175 150 4 lctl)
+  c_7 (tap-hold 175 150 7 lctl)
+
+)
+
+
+;; line controls
+(defalias
+ml (macro home home S-end) ;; mark line 
+s_ml (tap-hold 175 150 @ml lsft) ;; mark line on tap, shift on hold
+
+clu (macro home S-end C-c up end ret C-v 50 home) ;; copy line up
+cld (macro home S-end C-c right ret C-v 50 home) ;; copy line down
+)
+
+
+;; chording. may make a vid on this in future. otherwise google "stenography"
+(defzippy
+  empty.txt
+  on-first-press-chord-deadline 500
+  idle-reactivate-time          500
+  smart-space                   full
+  smart-space-punctuation (? ! . , ; : )
+  output-character-mappings (
+    ;; This should work for US international.
+    ! S-1
+    ? S-/
+    % S-5
+    "(" S-9
+    ")" S-0
+    : S-;
+    < S-,
+    > S-.
+    r#"""# S-'
+    | S-\
+    _ S--
+    ® AG-r
+    ’ (no-erase `)
+    é (single-output ' e)
+  )
+)
+
+
+
+
+
+;; mouse controls
+(defalias
+mwup (mwheel-up 125 120)
+mwdn (mwheel-down 125 120)
+mwlt (mwheel-left 125 120)
+mwrt (mwheel-right 125 120)
+mwbup (mwheel-up 125 1920)
+mwbdn (mwheel-down 125 1920)
+fpu (mwheel-up 15 30000)
+fpd (mwheel-down 15 30000)
+
+mup (movemouse-up 30 25)
+mdn (movemouse-down 30 25)
+mlt (movemouse-left 30 25)
+mrt (movemouse-right 30 25)
+mbrt (movemouse-right 100 100)
+mblt (movemouse-left 100 100)
+
+slw (movemouse-speed 20)
+)
+
+(defcfg
+  sequence-input-mode visible-backspaced
+  concurrent-tap-hold yes
+  movemouse-inherit-accel-state yes
+  movemouse-smooth-diagonals yes
+  linux-x11-repeat-delay-rate 175,32
+  linux-unicode-termination enter
+)
+
+;; shortcut for switching tabs
+(defoverrides
+  (lmeta f) (lctl pgup)
+  (lmeta p) (lctl pgdn)
+)
+
+;; a-ac  (switch
+;;    ((and lctl lsft)) (unicode À) break
+;;    ((and lctl))      (unicode à) break
+;;    ((and lsft))      (unicode Á) break
+;;    ()                (unicode á) break
+;;  )
+
+(defalias
+a-ac (switch
+  ((and lctl lsft))                 (unicode Ä) break
+  ((and lctl))                      (unicode ä) break
+  ((and lsft))                      (unicode Á) break
+  ()                                (unicode á) break
+)
+
+c-ac (switch
+((and lctl lsft)) (unicode Č) break
+((and lctl)) (unicode č) break
+((and lsft)) (unicode Ć) break
+() (unicode ć) break
+)
+
+d-ac (switch
+((and lctl lsft)) (unicode Ď) break
+((and lctl)) (unicode ď) break
+)
+
+e-ac (switch
+((and lctl lsft)) (unicode Ě) break
+((and lctl)) (unicode ě) break
+((and lsft)) (unicode É) break
+() (unicode é) break
+)
+
+g-ac (switch
+((and lctl lsft)) (unicode Ǧ) break
+((and lctl)) (unicode ǧ) break
+((and lsft)) (unicode Ǵ) break
+() (unicode ǵ) break
+)
+
+h-ac (switch
+((and lctl lsft)) (unicode Ȟ) break
+((and lctl)) (unicode ȟ) break
+)
+
+i-ac (switch
+((and lctl lsft)) (unicode Ǐ) break
+((and lctl)) (unicode ǐ) break
+((and lsft)) (unicode Í) break
+() (unicode í) break
+)
+
+j-ac (switch
+((and lctl)) (unicode ǰ) break
+)
+
+k-ac (switch
+((and lctl lsft)) (unicode Ǩ) break
+((and lctl)) (unicode ǩ) break
+((and lsft)) (unicode Ḱ) break
+() (unicode ḱ) break
+)
+
+l-ac (switch
+((and lctl lsft)) (unicode Ľ) break
+((and lctl)) (unicode ľ) break
+((and lsft)) (unicode Ĺ) break
+() (unicode ĺ) break
+)
+
+m-ac (switch
+((and lsft)) (unicode Ḿ) break
+() (unicode ḿ) break
+)
+
+n-ac (switch
+((and lctl lsft)) (unicode Ň) break
+((and lctl)) (unicode ň) break
+((and lsft)) (unicode Ń) break
+() (unicode ń) break
+)
+
+o-ac (switch
+((and lctl lsft)) (unicode Ô) break
+((and lctl))      (unicode ô) break
+((and lsft))      (unicode Ó) break
+()                (unicode ó) break
+)
+
+p-ac (switch
+((and lsft)) (unicode Ṕ) break
+() (unicode ṕ) break
+)
+
+r-ac (switch
+((and lctl lsft)) (unicode Ř) break
+((and lctl)) (unicode ř) break
+((and lsft)) (unicode Ŕ) break
+() (unicode ŕ) break
+)
+
+s-ac (switch
+((and lctl lsft)) (unicode Š) break
+((and lctl)) (unicode š) break
+((and lsft)) (unicode Ś) break
+() (unicode ś) break
+)
+
+t-ac (switch
+((and lctl lsft)) (unicode Ť) break
+((and lctl)) (unicode ť) break
+)
+
+u-ac (switch
+((and lctl lsft)) (unicode Ǔ) break
+((and lctl)) (unicode ǔ) break
+((and lsft)) (unicode Ú) break
+() (unicode ú) break
+)
+
+w-ac (switch
+((and lsft)) (unicode Ẃ) break
+() (unicode ẃ) break
+)
+
+y-ac (switch
+((and lsft)) (unicode Ý) break
+() (unicode ý) break
+)
+
+z-ac (switch
+((and lctl lsft)) (unicode Ž) break
+((and lctl)) (unicode ž) break
+((and lsft)) (unicode Ź) break
+() (unicode ź) break
+)
+)
+
+(defalias
+  s_a-ac (tap-hold 175 175 @a-ac lsft)
+  s_o-ac (tap-hold 175 175 @o-ac lsft)
+  m_r-ac (tap-hold 175 175 @r-ac lmet)
+  m_i-ac (tap-hold 175 175 @i-ac rmet)
+  c_n-ac (tap-hold 175 150 @n-ac lctl)
+  a_s-ac (tap-hold 175 175 @s-ac lalt)
+  a_e-ac (tap-hold 300 175 @e-ac lalt)
+  c_t-ac (tap-hold 175 150 @t-ac lctl)
+)
+
+
+
+;; greek. fork is used so works for both lower and uppercase
+(defalias
+α (fork (unicode α) (unicode A) (lsft))
+β (fork (unicode β) (unicode Β) (lsft))
+γ (fork (unicode γ) (unicode Γ) (lsft))
+δ (fork (unicode δ) (unicode Δ) (lsft))
+ε (fork (unicode ε) (unicode Ε) (lsft))
+ζ (fork (unicode ζ) (unicode Ζ) (lsft))
+η (fork (unicode η) (unicode Η) (lsft))
+θ (fork (unicode θ) (unicode Θ) (lsft))
+ι (fork (unicode ι) (unicode Ι) (lsft))
+κ (fork (unicode κ) (unicode Κ) (lsft))
+λ (fork (unicode λ) (unicode Λ) (lsft))
+μ (fork (unicode μ) (unicode Μ) (lsft))
+ν (fork (unicode ν) (unicode Ν) (lsft))
+ξ (fork (unicode ξ) (unicode Ξ) (lsft))
+ο (fork (unicode ο) (unicode Ο) (lsft))
+π (fork (unicode π) (unicode Π) (lsft))
+ρ (fork (unicode ρ) (unicode Ρ) (lsft))
+σ (fork (unicode σ) (unicode Σ) (lsft))
+ς (fork (unicode ς) (unicode Σ) (lsft))
+τ (fork (unicode τ) (unicode Τ) (lsft))
+υ (fork (unicode υ) (unicode Υ) (lsft))
+φ (fork (unicode φ) (unicode Φ) (lsft))
+χ (fork (unicode χ) (unicode Χ) (lsft))
+ψ (fork (unicode ψ) (unicode Ψ) (lsft))
+ω (fork (unicode ω) (unicode Ω) (lsft))
+
+;; greek homerow mods
+s_α (tap-hold 175 175 @α lsft)
+s_ο (tap-hold 175 175 @ο lsft)
+m_ρ (tap-hold 175 175 @ρ lmet)
+m_η (tap-hold 175 175 @η rmet)
+c_τ (tap-hold 175 150 @τ lctl)
+c_ν (tap-hold 175 150 @ν lctl)
+a_σ (tap-hold 175 175 @σ lalt)
+a_ε (tap-hold 300 175 @ε lalt)
+)
